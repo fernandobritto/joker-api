@@ -1,2 +1,2 @@
 # Genesis-Materialize-Theme
-Materialize Theme
+Tema desenvolvido com o framework MaterializeCSS
