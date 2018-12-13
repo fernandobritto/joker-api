@@ -1,2 +1,1 @@
-# Genesis Theme
-
+# Genesis
