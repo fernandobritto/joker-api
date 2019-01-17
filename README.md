@@ -2,6 +2,7 @@
 
 > Top 100 Cryptocurrencies
 
+
 **Bitcoin** – Primeira criptomoeda, responsável pela propagação da tecnologia blockchain no mundo. Usada como moeda e reserva de valor.
 
 **Ethereum** – Primeiro blockchain “progamável”, ou seja, permite criação de contratos inteligentes e aplicações descentralizadas a partir de uma linguagem de programação própria (solidity).
