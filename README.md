@@ -1,6 +1,6 @@
 # Genesis
 
-> Top 100 Cryptocurrencies
+> Top 100 Cryptomoedas
 
 
 **Bitcoin** – Primeira criptomoeda, responsável pela propagação da tecnologia blockchain no mundo. Usada como moeda e reserva de valor.
