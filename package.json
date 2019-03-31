@@ -1,0 +1,11 @@
+{
+  "name": "genesis-coins",
+  "version": "1.0.0",
+  "description": "Genesis-Coins",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {}
+}
