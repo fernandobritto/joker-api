@@ -171,7 +171,7 @@
 
 **ChainLink** – Conectar dados e aplicações já existentes em smart contracts.
 
-*Nxt** – Fornecer conjunto de ferramentas para construção de aplicações em blockchain como: mercado descentralizado, sistema de votação, entre outros.
+**Nxt** – Fornecer conjunto de ferramentas para construção de aplicações em blockchain como: mercado descentralizado, sistema de votação, entre outros.
 
 **Mixin** – Conectar todos os blockchains existentes com taxa de transferência ilimitada.
 
