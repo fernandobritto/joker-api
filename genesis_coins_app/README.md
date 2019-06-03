@@ -1,4 +1,4 @@
-# genesis_coins_app
+# App - Genesis Coins 
 
 A new Flutter application.
 
