@@ -43,9 +43,20 @@ class _HomeState extends State<Home> {
                   style: TextStyle(
                     color: Colors.amber,
                     fontSize: 25.0),
-                  textAlign: TextAlign.center,
-                ),
+                  textAlign: TextAlign.center,)
               );//Center
+            default:
+              if(snapshot.hasError){
+                return Center(
+                    child: Text("Erro ao carregando Dados :(",
+                      style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 25.0),
+                      textAlign: TextAlign.center,)
+                );//Center
+              }else{
+                return Container(color: Colors.green,);
+              }
           }
         }
       )// FutureBuilder
