@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
+import 'dart:convert';
 
 const request = "https://api.hgbrasil.com/finance?format=json&key=SUA-CHAVE";
 
