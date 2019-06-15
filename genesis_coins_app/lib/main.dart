@@ -4,9 +4,9 @@ import 'package:async/async.dart';
 
 const request = "https://api.hgbrasil.com/finance?format=json&key=SUA-CHAVE";
 
-void main(){
+void main() async{
 
-  http.Response response = http.get(request);
+  http.Response response = await http.get(request);
 
   runApp(MaterialApp(
     home: Container(),
