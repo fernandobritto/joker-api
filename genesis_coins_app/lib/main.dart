@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:async/async.dart';
+import 'dart:async';
 import 'dart:convert';
 
 const request = "https://api.hgbrasil.com/finance?format=json&key=SUA-CHAVE";
 
 void main() async{
 
-  http.Response response = await http.get(request);
-
   runApp(MaterialApp(
     home: Container(),
   )); // MaterialApp
+}
+
+Future<Map> getData() async {
+  http.Response response = await http.get(request);
+  return json.decode(response.body);
 }
