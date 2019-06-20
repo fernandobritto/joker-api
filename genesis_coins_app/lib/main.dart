@@ -46,6 +46,18 @@ class _HomeState extends State<Home> {
                       fontSize: 25.0),
                   textAlign: TextAlign.center, ),
                 );
+              default:
+                if(snapshot.hasError){
+                  return Center(
+                    child: Text("Erro ao Carregar Dados :( ",
+                      style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 25.0),
+                      textAlign: TextAlign.center, ),
+                  );
+                } else {
+                  return Container(color: Colors.green,);
+                }
             }
           }) // FutureBuilder
     ); //Scaffold
