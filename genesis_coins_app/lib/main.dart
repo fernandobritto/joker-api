@@ -61,13 +61,25 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center, ),
                   );
                 } else {
-                  dolar = snapshot.data["result"]["currencies"]["USD"]["buy"];
-                  euro = snapshot.data["result"]["currencies"]["EUR"]["buy"];
+                  dolar = snapshot.data["results"]["currencies"]["USD"]["buy"];
+                  euro = snapshot.data["results"]["currencies"]["EUR"]["buy"];
 
                   return SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        Icon(Icons.monetization_on, size: 150.0, color: Colors.amber)
+                        Icon(Icons.monetization_on, size: 150.0, color: Colors.amber),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Reais",
+                            labelStyle: TextStyle(color: Colors.amber),
+                            border: OutlineInputBorder(),
+                            prefixText: "R\$"
+                          ),
+                          style: TextStyle(
+                            color: Colors.amber, fontSize: 25.0
+                          ),
+                        )// TextField
                       ],
                     ),
                   );
