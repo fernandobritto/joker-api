@@ -19,6 +19,11 @@ Future<Map> getData() async {
 }
 
 class Home extends StatefulWidget {
+
+  double dolar;
+  double euro;
+
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -56,7 +61,16 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center, ),
                   );
                 } else {
-                  return Container(color: Colors.green,);
+                  dolar = snapshot.data["result"]["currencies"]["USD"]["buy"];
+                  euro = snapshot.data["result"]["currencies"]["EUR"]["buy"];
+
+                  return SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Icon(Icons.monetization_on, size: 150.0, color: Colors.amber)
+                      ],
+                    ),
+                  );
                 }
             }
           }) // FutureBuilder
