@@ -24,8 +24,32 @@ Future<Map> getData() async {
 
 class Home extends StatefulWidget {
 
-  double dolar;
+  final realController = TextEditingController();
+  final cashController = TextEditingController();
+  final euroController = TextEditingController();
+
+  double cash;
   double euro;
+
+  void _realChanged(String text){
+    double real = double.parse(text);
+    cashController.text = (real/cash).toStringAsFixed(2);
+    euroController.text = (real/euro).toStringAsFixed(2);
+  }
+
+  void _cashChanged(String text){
+    double cash = double.parse(text);
+    realController.text = (cash * this.cash).toStringAsFixed(2);
+    euroController.text = (cash * this.cash/euro).toStringAsFixed(2);
+  }
+
+  void _euroChanged(String text){
+    double euro = double.parse(text);
+    realController.text = (euro * this.euro).toStringAsFixed(2);
+    cashController.text = (euro * this.euro / cash).toStringAsFixed(2);
+  }
+
+
 
 
   @override
@@ -65,7 +89,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center, ),
                   );
                 } else {
-                  dolar = snapshot.data["results"]["currencies"]["USD"]["buy"];
+                  cash = snapshot.data["results"]["currencies"]["USD"]["buy"];
                   euro = snapshot.data["results"]["currencies"]["EUR"]["buy"];
 
                   return SingleChildScrollView(
@@ -74,41 +98,11 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Icon(Icons.monetization_on, size: 150.0, color: Colors.amber),
-                        TextField(
-                          decoration: InputDecoration(
-                            labelText: "Reais",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "R\$"
-                          ),
-                          style: TextStyle(
-                            color: Colors.amber, fontSize: 25.0
-                          ),
-                        ),// TextField
+                        buildTextField("Reais", "R\$", realController, _realChanged),
                         Divider(),
-                      TextField(
-                        decoration: InputDecoration(
-                            labelText: "Dolares",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "US\$"
-                        ),
-                        style: TextStyle(
-                            color: Colors.amber, fontSize: 25.0
-                        ),
-                      ),// TextField
+                        buildTextField("Dolar", "US\$", cashController, _cashChanged),
                         Divider(),
-                        TextField(
-                          decoration: InputDecoration(
-                              labelText: "Euros",
-                              labelStyle: TextStyle(color: Colors.amber),
-                              border: OutlineInputBorder(),
-                              prefixText: "euro\$"
-                          ),
-                          style: TextStyle(
-                              color: Colors.amber, fontSize: 25.0
-                          ),
-                        )// TextField
+                        buildTextField("Euros", "E", euroController, _euroChanged)
                       ],
                     ),
                   );
@@ -117,5 +111,23 @@ class _HomeState extends State<Home> {
           }) // FutureBuilder
     ); //Scaffold
   }
+}
+
+
+Widget buildTextField(String label, String prefix, TextEditingController c, Function f){
+  return TextField(
+    controller: c,
+    decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.amber),
+        border: OutlineInputBorder(),
+        prefixText: prefix
+    ),
+    style: TextStyle(
+        color: Colors.amber, fontSize: 25.0
+    ),
+    onChanged: f,
+    keyboardType: TextInputType.number,
+  );// TextField
 }
 
