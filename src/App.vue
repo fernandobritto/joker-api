@@ -1,28 +1,68 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <nav>
+      <div class="nav-wrapper blue darken-1">
+        <a href="#" class="brand-logo center">Product Qualifier</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <form>
+          <label>Nome do Produto</label>
+          <input type="text" placeholder="Nome do Produto">
+          <label>Descrição</label>
+          <input type="number" placeholder="Descrição">
+          <label>Cod QX</label>
+          <input type="text" placeholder="Codigo QX">
+          <label>Qualidade</label>
+          <input type="number" placeholder="QLD">
+          <label>Slug</label>
+          <input type="text" placeholder="Slug">
+
+          <button class="waves-effect waves-light btn-small">Salvar<i class="material-icons left">save</i></button>
+
+      </form>
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Produto</th>
+            <th>Descrição</th>
+            <th>Codigo QX</th>
+            <th>QLD</th>            
+            <th>OPÇÕES</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>Arduino</td>
+            <td>hardware livre</td>
+            <td>#0000FF</td>
+            <td>1</td>
+            
+            <td>
+              <button class="waves-effect btn-small blue darken-1"><i class="material-icons">create</i></button>
+              <button class="waves-effect btn-small red darken-1"><i class="material-icons">delete_sweep</i></button>
+            </td>
+
+          </tr>
+        </tbody>      
+      </table>
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
