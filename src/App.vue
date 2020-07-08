@@ -60,6 +60,32 @@
 </template>
 
 <script>
+import Qualifiers from './services/qualifier'
+
+export default {
+  mounted(){    
+    Qualifier.list().then(resp => {
+      console.log(resp.data)
+    })
+  }
+}
+
+
+// const axios = require('axios');
+// // Make a request for a user with a given ID
+// axios.get('http://127.0.0.1:8000/api/v1')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response.data);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
+
 
 </script>
 
